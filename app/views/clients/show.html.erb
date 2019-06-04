@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @client.Name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @client.Address %>
+</p>
+
+<p>
+  <strong>String:</strong>
+  <%= @client.string %>
+</p>
+
+<p>
+  <strong>Current weight:</strong>
+  <%= @client.current_weight %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @client.height %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @client.gender %>
+</p>
+
+<p>
+  <strong>Email address:</strong>
+  <%= @client.email_address %>
+</p>
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>
+
+<%= render 'trainers.index' , trainers: trainers.where(client_id: @client.id) %>
+
+<%= render 'trainers.form' , trainers: trainers.new , client_id: @client.id %>
+
+
